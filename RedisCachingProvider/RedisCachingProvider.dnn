@@ -1,6 +1,6 @@
 ﻿<dotnetnuke type="Package" version="5.0">
   <packages>
-	<package name="RedisCachingProvider" type="Provider" version="01.00.03">
+	<package name="RedisCachingProvider" type="Provider" version="01.00.04">
 	  <friendlyName>DNN Redis Caching Provider</friendlyName>
 	  <description>Allows to use a Redis cache server or cluster within DNN, using a hybrid approach mixing in-memory cache plus the shared
       Redis cache</description>
@@ -36,12 +36,12 @@
 			  <configuration>
 				<nodes>
 				  <node path="/configuration/dotnetnuke/caching" action="updateattribute" name="defaultProvider" value="RedisCachingProvider" />
-				  <node path="/configuration/dotnetnuke/caching/providers" action="update" key="name" collision="overwrite">
+				  <node path="/configuration/dotnetnuke/caching/providers" action="update" key="name" collision="ignore">
 					<add name="RedisCachingProvider"
 								type="DotNetNuke.Providers.RedisCachingProvider.RedisCachingProvider, DotNetNuke.Providers.RedisCachingProvider"
 								providerPath="~\Providers\CachingProviders\RedisCachingProvider\" useCompression="false" silentMode="true" />
 				  </node>
-          <node path="/configuration/connectionStrings" action="update" key="name" collision="overwrite">
+          <node path="/configuration/connectionStrings" action="update" key="name" collision="ignore">
             <add name="RedisCachingProvider" connectionString="" providerName="DotNetNuke.Providers.RedisCachingProvider" />
           </node>
 				</nodes>
