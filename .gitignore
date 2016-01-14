@@ -3,3 +3,7 @@ TestResults
 bin
 install
 obj
+*.suo
+.nuget
+.vs
+.build
